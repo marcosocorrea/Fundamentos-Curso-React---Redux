@@ -1,6 +1,7 @@
 
 import React from 'react'
 
+import UsuarioInfo from './components/condicional/UsuarioInfo'
 import ParOuImpar from './components/condicional/ParOuImpar'
 import ListaAlunos from "./components/repeticao/ListaAlunos"
 import TabelaProdutos from "./components/repeticao/TabelaProdutos"
@@ -13,6 +14,7 @@ import Fragmento from './components/basicos/Fragmento'
 import Aleatorio from './components/basicos/Aleatorio'
 
 import "./App.css"
+import DiretaPai from './components/comunicacao/DiretaPai'
 
 export default _ =>
 
@@ -21,12 +23,18 @@ export default _ =>
 
         <div className="Cards">
 
-        <Card titulo="#08 - Desafio Renderização Condicional" color="#21c5de" >
-                <ParOuImpar numero={20}></ParOuImpar>
+        <Card titulo="#09 - Comunicação Direta" color="#24db27" >
+                <DiretaPai></DiretaPai>
 
             </Card>
 
-        <Card titulo="#07 - Desafio Repetição Tabela" color="#a45b8d" >
+            <Card titulo="#08 - Desafio Renderização Condicional" color="#21c5de" >
+                <ParOuImpar numero={21}></ParOuImpar>
+                <UsuarioInfo usuario={{nome: 'Fernando'}}></UsuarioInfo>
+                <UsuarioInfo></UsuarioInfo>
+            </Card>
+
+            <Card titulo="#07 - Desafio Repetição Tabela" color="#a45b8d" >
                 <TabelaProdutos></TabelaProdutos>
 
             </Card>
