@@ -1,6 +1,8 @@
 
 import React from 'react'
 
+import Contador from './components/contador/Contador'
+import Input from './components/formulario/Input'
 import IndiretaPai from './components/comunicacao/IndiretaPai'
 import UsuarioInfo from './components/condicional/UsuarioInfo'
 import ParOuImpar from './components/condicional/ParOuImpar'
@@ -24,16 +26,21 @@ export default _ =>
 
         <div className="Cards">
 
+
+            <Card titulo="#12 - Contador (Input)" color="#a36f5c" >
+                <Contador numeroInicial={10} />
+            </Card>
+
+            <Card titulo="#11 - Componente Controlado (Input)" color="#0af587" >
+                <Input />
+            </Card>
+
             <Card titulo="#10 - Comunicação Indireta" color="#849f60" >
-
-                <IndiretaPai>
-                </IndiretaPai>
-
+                <IndiretaPai />
             </Card>
 
             <Card titulo="#09 - Comunicação Direta" color="#24db27" >
                 <DiretaPai></DiretaPai>
-
             </Card>
 
             <Card titulo="#08 - Desafio Renderização Condicional" color="#21c5de" >
@@ -44,24 +51,18 @@ export default _ =>
 
             <Card titulo="#07 - Desafio Repetição Tabela" color="#a45b8d" >
                 <TabelaProdutos></TabelaProdutos>
-
             </Card>
 
             <Card titulo="#06 - Repetição" color="#45ba54" >
-                <ListaAlunos></ListaAlunos>
-
+                <ListaAlunos />
             </Card>
 
             <Card titulo="#05 - Componente com Filhos" color="#c8a137" >
-
                 <Familia sobrenome="Ferreira">
-
                     <FamiliaMembro nome="Pedro" />
                     <FamiliaMembro nome="Ana" />
                     <FamiliaMembro nome="Gustavo" />
-
                 </Familia>
-
             </Card>
 
             <Card titulo="#04 - Desafio Aleatório" color="#eaff05" >
@@ -80,7 +81,7 @@ export default _ =>
             </Card>
 
             <Card titulo="#01 - Primeiro Componente" color="#0af587">
-                <Primeiro></Primeiro>
+                <Primeiro />
             </Card>
 
         </div>
