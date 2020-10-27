@@ -1,4 +1,9 @@
+import './Contador.css'
 import React, { Component } from 'react'
+
+import Display from './Display'
+import Botoes from './Botoes'
+import PassoForm from './PassoForm'
 
 class Contador extends Component {
 
@@ -7,35 +12,31 @@ class Contador extends Component {
         passo: this.props.passoInicial || 5
     }
 
-    incremento = () => {    /* como este é um componente baseado em classe foi preciso uma função arrow aqui para o this apontar sempre para a instancia atual. */
+    inc = () => {    /* como este é um componente baseado em classe foi preciso uma função arrow aqui para o this apontar sempre para a instancia atual. */
         this.setState({
             numero: this.state.numero + this.state.passo
         })
     }
 
-    decremento = (e) => {
+    dec = (e) => {
         this.setState({
             numero: this.state.numero - this.state.passo
         })
     }
 
-    setPasso = (e) => {
+    setPasso = (novoPasso) => {
         this.setState({
-          passo: +e.target.value /*o simbolo '+' no '+e.target.value' é para transformar o valor que veio como string para inteiro. */
+          passo: novoPasso /*o simbolo '+' no '+e.target.value' é para transformar o valor que veio como string para inteiro. */
         })
     }
 
     render() {
         return (
-            <div>
+            <div className='Contador'>
                 <h2>Contador</h2>
-                <h3>{this.state.numero}</h3>
-                <div>
-                    <label htmlFor="passoInput">Passo: </label>
-                    <input id="passoInput" type="number" value={this.state.passo} onChange={this.setPasso}/>
-                </div>
-                <button onClick={this.incremento}>+</button>
-                <button onClick={this.decremento}>-</button>
+                <Display numero={this.state.numero}/>
+                <PassoForm passo={this.state.passo} setPasso={this.setPasso}/>
+                <Botoes incremento={this.inc} decremento={this.dec}></Botoes>
             </div>
         )
     }
